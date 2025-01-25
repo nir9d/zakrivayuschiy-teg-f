@@ -34,7 +34,7 @@
 }
 .header__title {
   /* </HTML> */
-  font-family: var(--page-font-family), sans-serif;
+  font-family: var(--page-font-family, 'PressStart2P');
   font-style: normal;
   font-weight: 400;
   font-size: clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem);
