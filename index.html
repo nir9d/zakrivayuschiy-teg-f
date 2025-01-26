@@ -38,7 +38,7 @@
           </p>
         </div>
         <div class="buttons">
-          <button class="card__icon-button" type="button">
+          <button class="card__icon-button effect_button" type="button">
             <svg
               class="like-icon"
               width="39"
@@ -96,7 +96,7 @@
           </p>
         </div>
         <div class="buttons">
-          <button class="card__icon-button" type="button">
+          <button class="card__icon-button effect_button" type="button">
             <svg
               class="like-icon"
               width="39"
@@ -152,7 +152,7 @@
           </p>
         </div>
         <div class="buttons">
-          <button class="card__icon-button" type="button">
+          <button class="card__icon-button effect_button" type="button">
             <svg
               class="like-icon"
               width="39"
@@ -210,7 +210,7 @@
           </p>
         </div>
         <div class="buttons">
-          <button class="card__icon-button" type="button">
+          <button class="card__icon-button effect_button" type="button">
             <svg
               class="like-icon"
               width="39"
@@ -269,7 +269,7 @@
           </p>
         </div>
         <div class="buttons">
-          <button class="card__icon-button" type="button">
+          <button class="card__icon-button effect_button" type="button">
             <svg
               class="like-icon"
               width="39"
@@ -326,7 +326,7 @@
         </div>
 
         <div class="buttons">
-          <button class="card__icon-button" type="button">
+          <button class="card__icon-button effect_button" type="button">
             <svg
               class="like-icon"
               width="39"
@@ -385,7 +385,7 @@
         </div>
 
         <div class="buttons">
-          <button class="card__icon-button" type="button">
+          <button class="card__icon-button effect_button" type="button">
             <svg
               class="like-icon"
               width="39"
@@ -444,7 +444,7 @@
           </p>
         </div>
         <div class="buttons">
-          <button class="card__icon-button" type="button">
+          <button class="card__icon-button effect_button" type="button">
             <svg
               class="like-icon"
               width="39"
@@ -477,30 +477,32 @@
               />
             </svg>
           </button>
+
           <button class="effect_button card__like-button" type="button">
             <span class="button__text">Like</span>
           </button>
         </div>
       </article>
+    
       <button
         class="effect_button button"
         type="button"
         onclick="window.modal.showModal();"
       >
-        <svg class="floppy-icon" width="100%" height="100%">
+        <svg class="modal__icon" viewBox="0 0 29 28">
           <use href="svg/floppy.svg#floppy" />
         </svg>
         <span class="button__text">Сохранить на память</span>
       </button>
       <dialog class="modal" id="modal">
         <div class="modal__content">
-          <svg class="modal__icon" viewBox="0 0 29 28">
+          <svg class="modal__icon" viewBox="0 0 21 21">
             <use href="svg/floppy.svg#floppy" />
           </svg>
           <p>Вставьте дискету,чтобы продолжить</p>
         </div>
         <form method="dialog">
-          <button type="submit" class="button effect_button">
+          <button type="submit" class=" effect_button save-button">
             <span class="button__text">ок</span>
           </button>
         </form>
@@ -509,4 +511,3 @@
     <script src="./scripts/like.js"></script>
   </body>
 </html>
-
