@@ -19,7 +19,7 @@
   background-image: var(--page-background-image);
   background-size: cover;
   background-attachment: fixed;
-  font-variation-settings:"wght" var(--vrn-weight);
+  font-variation-settings:"wght" var(--vrn-weight-400);
 }
 .content__section {
   border: 2px solid var(--accent-color);
@@ -39,7 +39,7 @@
   /* </HTML> */
   font-family: var(--page-font-family, 'PressStart2P'), sans-serif;
   font-style: normal;
-  font-variation-settings:"wght" var(--vrn-weight);
+  font-weight: 400;
   font-size: clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem);
   line-height: clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem);
   /* identical to box height */
@@ -62,7 +62,7 @@ figure {
   position: relative;
   font-family: var(--page-main-font), sans-serif;
   font-style: normal;
-  font-variation-settings:"wght" var(--vrn-weight);
+  font-variation-settings:"wght" var(--vrn-weight-400);
   font-size: 18px;
   line-height: 21px;
   /* or 117% */
@@ -70,8 +70,6 @@ figure {
   display: flex;
   flex-direction: column;
   background-color: var(--background-color);
-}
-.card:not(:first-of-type) {
 }
 .card__title {
   font-family: var(--page-main-font), sans-serif;
@@ -143,7 +141,7 @@ figure {
   z-index: 2;
   font-family: var(--page-font-family, 'PressStart2P'), sans-serif;
   font-style: normal;
-  font-variation-settings:"wght" var(--vrn-weight);
+  font-weight: 400;
   font-size: 14px;
   line-height: 90%;
   color: #fff;
@@ -195,13 +193,6 @@ figure {
 .filter_sepia-contrast-brightness {
   filter: sepia(1) contrast(2) brightness(200%);
 }
-.floppy-icon {
-  inline-size: 21px;
-  block-size: 21px;
-
-  mix-blend-mode: difference;
-  color: white;
-}
 .effect_button:focus {
   outline: none;
 }
@@ -227,16 +218,34 @@ figure {
 }
 
 .button {
-  width: 100%;
-  min-height: 55px;
   position: relative;
   z-index: 1;
-  inline-size: clamp(19.25rem, 18.656rem + 2.535vw, 20.938rem);
-  block-size: clamp(5rem, 5.55rem + -2.347vw, 3.438rem);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  min-inline-size: 335px;
+  min-block-size: 55px;
+  border: 2px solid var(--accent-color);
+  background-color: white;
+  cursor: pointer;
+  
+}
+.save-button {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   border: 2px solid var(--accent-color);
   background-color: white;
   cursor: pointer;
   overflow: auto;
+  inline-size: 100%;
+  max-inline-size: 293px;
+  block-size: 38px;
 }
 @media (width <= 375px) {
   .floppy-icon {
@@ -247,26 +256,36 @@ figure {
     justify-self: center;
   }
   .modal {
-    padding: 28px 34px 28px 40px;
-    max-inline-size: 340px;
+    
+    min-inline-size:341px;
+  }
+  .save-button {
+    min-inline-size: 257px;
+  }
+  .button {
+    flex-direction: column;
+    min-inline-size: 306px;
+    min-block-size: 80px;
   }
 }
-.card__icon-button:focus {
+.effect_button:focus {
   outline: none;
 }
-.card__icon-button:focus-visible {
+.effect_button:focus-visible {
   border: 2px solid #000;
   transition: 0.5s ease-in-out;
 }
 .modal {
+  padding: 28px;
+    inline-size:353px;
   border: 2px solid var(--text-color, #000000);
-  padding: 25px 30px;
   color: #000000;
   font-family: var(--page-font-family, 'PressStart2P'), sans-serif;
   line-height: 1.5;
   text-transform: uppercase;
   background: var(--background-color);
-  max-inline-size: 355px;
+  
+  overflow: hidden;
 }
 
 .modal[open] {
@@ -290,6 +309,8 @@ figure {
   flex-shrink: 0;
   inline-size: 39px;
   block-size: 39px;
+  mix-blend-mode: difference;
+  color: white;
 }
 @supports (
   (-webkit-text-stroke: 1px var(--page-background-color, #fff)) or
