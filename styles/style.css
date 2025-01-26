@@ -85,7 +85,10 @@ figure {
   padding-block-end: 5.5px;
 }
 .card__paragrah {
-  padding: 25px;
+  padding-top: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 27px;
 }
 .card__paragrah:last-of-type {
   padding-block: 0;
@@ -95,14 +98,19 @@ figure {
   flex-direction: column;
 }
 .card__img {
-  width: 100%;
+  display: block;
   object-fit: cover;
+  aspect-ratio: 1 / 1;
+  inline-size: 100%;
+ 
+  
 }
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: 48px;
+  padding-bottom: 100px;
 }
 .buttons {
   position: relative;
@@ -123,6 +131,8 @@ figure {
   overflow: auto;
 }
 .card__icon-button {
+  display: flex;
+  align-content: center;
   border: 2px solid transparent;
   background-color: transparent;
   cursor: pointer;
@@ -155,30 +165,34 @@ figure {
 }
 .card__images {
   position: relative;
+  border-bottom: 2px solid black;
+  object-fit: cover;
+  
+  
 }
 .footer {
   padding-block-start: 52px;
   padding-block-end: 100px;
 }
-.card:nth-of-type(2) .card__img {
+.filter_contrast {
   filter: contrast(20%);
 }
-.card:nth-of-type(3) .card__img {
-  filter: blur(30%);
+.filter_blur {
+  filter: blur(3px);
 }
-.card:nth-of-type(4) .card__img {
+.filter_grayscale {
   filter: grayscale(100%);
 }
-.card:nth-of-type(5) .card__img {
+.filter_saturate {
   filter: saturate(200%);
 }
-.card:nth-of-type(6) .card__img {
+.filter_hue-rotate {
   filter: hue-rotate(-50deg);
 }
-.card:nth-of-type(7) .card__img {
-  filter: contrast(20%);
+.filter_invert {
+  filter: invert(100%);
 }
-.card:nth-of-type(8) .card__img {
+.filter_sepia-contrast-brightness {
   filter: sepia(1) contrast(2) brightness(200%);
 }
 .floppy-icon {
@@ -188,13 +202,14 @@ figure {
   mix-blend-mode: difference;
   color: white;
 }
-.card__like-button:focus {
+.effect_button:focus {
   outline: none;
 }
-.card__like-button:focus-visible {
+.effect_button:focus-visible {
   box-shadow: 2px 2px 0px 0px #000;
+  transition: 0.5s ease-in-out;
 }
-.card__like-button::before {
+.effect_button::before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -203,10 +218,10 @@ figure {
   height: 100%;
   width: 0;
   background: var(--accent-color);
-  transition: transform 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
   transform-origin: left;
 }
-.card__like-button:hover::before {
+.effect_button:hover::before {
   transform: scaleX(1);
   width: 100%;
 }
@@ -214,6 +229,14 @@ figure {
 .button {
   width: 100%;
   min-height: 55px;
+  position: relative;
+  z-index: 1;
+  inline-size: clamp(19.25rem, 18.656rem + 2.535vw, 20.938rem);
+  block-size: clamp(5rem, 5.55rem + -2.347vw, 3.438rem);
+  border: 2px solid var(--accent-color);
+  background-color: white;
+  cursor: pointer;
+  overflow: auto;
 }
 @media (width <= 375px) {
   .floppy-icon {
@@ -233,7 +256,7 @@ figure {
 }
 .card__icon-button:focus-visible {
   border: 2px solid #000;
-  transition: border 0.3s ease;
+  transition: 0.5s ease-in-out;
 }
 .modal {
   border: 2px solid var(--text-color, #000000);
@@ -268,27 +291,11 @@ figure {
   inline-size: 39px;
   block-size: 39px;
 }
-
-.modal__button {
-  inline-size: 100%;
-}
-.button-modal {
-  position: relative;
-  z-index: 1;
-
-  min-width: 131px;
-
-  min-height: 51px;
-  border: 2px solid var(--accent-color);
-  background-color: white;
-  cursor: pointer;
-  overflow: auto;
-}
 @supports (
   (-webkit-text-stroke: 1px var(--page-background-color, #fff)) or
     (text-stroke: 1px var(--page-background-color, #fff))
 ) {
-  .card__img-label {
+  .img__label {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--page-background-color, #fff);
     text-stroke: 1px var(--page-background-color, #fff);
