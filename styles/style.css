@@ -301,8 +301,7 @@ figure {
   font-size: 14px;
 }
 .modal[open] .modal__icon {
- 
-  margin-top: 12px;
+  margin-bottom: 12px;
   block-size: 39px;
   margin-left: 10px;
 }
