@@ -213,6 +213,7 @@ figure {
   transform: scaleX(1);
   width: 100%;
 }
+
 .button {
   position: relative;
   z-index: 1;
@@ -277,6 +278,7 @@ figure {
   text-transform: uppercase;
   background: var(--background-color);
 }
+
 .modal[open] {
   display: grid;
   grid-template-rows: repeat(2, min-content);
@@ -315,3 +317,4 @@ figure {
     text-stroke: 1px var(--page-background-color, #fff);
   }
 }
+
