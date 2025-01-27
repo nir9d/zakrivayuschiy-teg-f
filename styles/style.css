@@ -118,7 +118,6 @@ figure {
 .card__like-button {
   position: relative;
   z-index: 1;
-  padding-top: 7px;
   min-width: 131px;
   height: 38px;
   border: 2px solid var(--accent-color);
@@ -214,14 +213,12 @@ figure {
   transform: scaleX(1);
   width: 100%;
 }
-
 .button {
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
 
   min-inline-size: 336px;
   min-block-size: 55px;
@@ -246,13 +243,6 @@ figure {
   text-transform: uppercase;
 }
 @media (width <= 375px) {
-  .floppy-icon {
-    inline-size: 28px;
-    block-size: 28px;
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-  }
   .modal[open] {
     padding: 38px;
     min-inline-size: 341px;
@@ -265,6 +255,11 @@ figure {
     min-inline-size: 306px;
     min-block-size: 80px;
   }
+
+.button .modal__icon {
+  block-size: 39px;
+  margin-left: 9px;
+}
 }
 .card__icon-button:focus {
   outline: none;
@@ -283,7 +278,6 @@ figure {
   text-transform: uppercase;
   background: var(--background-color);
 }
-
 .modal[open] {
   display: grid;
   grid-template-rows: repeat(2, min-content);
@@ -294,20 +288,24 @@ figure {
   opacity: 0.75;
   background: #000000;
 }
-
+.modal__icon {
+  margin-top: 10px;
+  margin-left: 10px;
+  block-size: 29px;
+}
 .modal__content {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
   font-size: 14px;
 }
-
-.modal__icon {
+.modal[open] .modal__icon {
   flex-shrink: 0;
   block-size: 50px;
   mix-blend-mode: difference;
   color: white;
-  padding-top: 10px;
+  margin-top: 12px;
+  block-size: 39px;
 }
 @supports (
   (-webkit-text-stroke: 1px var(--page-background-color, #fff)) or
@@ -319,3 +317,4 @@ figure {
     text-stroke: 1px var(--page-background-color, #fff);
   }
 }
+
