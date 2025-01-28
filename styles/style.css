@@ -246,6 +246,7 @@ figure {
 @media (width <= 375px) {
   .modal[open] {
     min-inline-size: 341px;
+    padding: 38px;
   }
   .save-button {
     min-inline-size: 257px;
@@ -278,7 +279,6 @@ figure {
   text-transform: uppercase;
   background: var(--background-color);
 }
-
 .modal[open] {
   display: grid;
   grid-template-rows: repeat(2, min-content);
@@ -305,7 +305,7 @@ figure {
 .modal[open] .modal__icon {
   margin-bottom: 12px;
   block-size: 39px;
-  margin-left: 10px;
+  margin-left: 0px;
 }
 @supports (
   (-webkit-text-stroke: 1px var(--page-background-color, #fff)) or
